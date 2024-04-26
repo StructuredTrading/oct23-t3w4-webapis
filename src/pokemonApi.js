@@ -9,13 +9,21 @@ async function getPokemonData() {
     let response = await fetch(fullApiUrl);
     let responseData = await response.json();
     let result = responseData;
+
+    // 'response' variable could be named anything. (represents the data received) 
+    // let promiseResponse = await fetch(fullApiUrl).then(response => {
+    //     return response.json();
+    // });
+
+    // result = promiseResponse;
+
     return result;
 }
 
 
-async function putDataOnPage() {
-
-
+async function putDataOnPage(dataToDsiplay) {
+    document.getElementsByClassName('pokemonName')[0].textContent = dataToDsiplay.name;
+    
 }
 
 
@@ -23,7 +31,8 @@ async function putDataOnPage() {
 async function getAndDisplayPokemoneData() {
     let data = await getPokemonData();
     console.log(data);
-    putDataOnPage();
+
+    putDataOnPage(data);
 }
 
 
