@@ -6,7 +6,7 @@
 
 <!-- Screenshots and/or deployment URL -->
 
-
+## [Link to Live example](https://random-pokemon-generator-example.netlify.app/)
 
 ## To-Do
 
