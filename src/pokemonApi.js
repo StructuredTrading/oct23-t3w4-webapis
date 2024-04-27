@@ -46,7 +46,8 @@ async function putDataOnPage(dataToDisplay) {
     // If number is 1, show shiny
     // Else, show default
 
-    let shinyResult = Math.floor(Math.random() * 4) + 1;
+    let oddsUpperLimit = 4;
+    let shinyResult = Math.floor(Math.random() * oddsUpperLimit) + 1;
 
     let imageContainer = document.getElementsByClassName("pokemonImage")[0];
     let imageElement = imageContainer.getElementsByTagName("IMG")[0];
@@ -60,7 +61,15 @@ async function putDataOnPage(dataToDisplay) {
         imageElement.src = dataToDisplay.sprites.front_default;
     }
 
+    let cryURL = dataToDisplay.cries.latest;
+    let pokemonAudioElement = document.querySelector(".pokemonCry audio")
+    pokemonAudioElement.src = cryURL;
 
+    let pokemonAudioPlayButton = document.querySelector(".pokemonCry");
+    pokemonAudioPlayButton.addEventListener("click", () => {
+        pokemonAudioElement.volume = 0.2;
+        pokemonAudioElement.play();
+    })
 
 }
 
