@@ -36,6 +36,16 @@ async function putDataOnPage(dataToDisplay) {
         // If no 2nd type exists, reset the content in type2Dsiplay
         type2Display.textContent = "Type 2: ";
     }
+
+
+    // Wishlist: add random chance to select front_shiny instead of front_default
+    let imageContainer = document.getElementsByClassName("pokemonImage")[0];
+    let imageElement = imageContainer.getElementsByTagName("IMG")[0];
+    imageElement.src = dataToDisplay.sprites.front_default;
+
+    document.querySelector(".pokemonImage IMG").src = dataToDisplay.sprites.front_default;
+
+
 }
 
 
